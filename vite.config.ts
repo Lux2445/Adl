@@ -18,11 +18,12 @@ export default defineConfig(({ mode }) => ({
       deny: [".env", ".env.*", "*.{crt,pem}", "**/.git/**", "server/**"],
     },
   },
+  plugins: [react()],
+  base: "/Adl/",
   build: {
     outDir: "dist",
+    emptyOutDir: true,
   },
-  plugins: [react(), expressPlugin()],
-  base: "/Adl/",
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "client"),
